@@ -18,27 +18,9 @@ pipeline {
             }
         }
 
-        stage('Run frontend') {
-            steps {
-                script {
-                    sh 'npm run dev'
-                }
-            }
-        }
-
-        stage('Test frontend') {
-            steps {
-                script {
-                    sh 'curl http://localhost:5173'
-                }
-            }
-        }
-
-        stage('Cleanup') {
-            steps {
-                script {
-                    sh 'pkill -f "node"'
-                }
+        stage('Build Docker Image') {
+            steps {  
+                bat 'docker build -t inupavihan/blogfinity-frontend:%BUILD_NUMBER% .'
             }
         }
     }
