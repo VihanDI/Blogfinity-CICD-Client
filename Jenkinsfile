@@ -25,6 +25,22 @@ pipeline {
                 }
             }
         }
+
+        stage('Test frontend') {
+            steps {
+                script {
+                    sh 'curl http://localhost:5173'
+                }
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                script {
+                    sh 'pkill -f "node"'
+                }
+            }
+        }
     }
 }
 
