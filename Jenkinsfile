@@ -17,6 +17,14 @@ pipeline {
                 }
             }
         }
+
+        stage('Run frontend') {
+            steps {
+                script {
+                    sh 'npm run dev'
+                }
+            }
+        }
     }
 }
 
