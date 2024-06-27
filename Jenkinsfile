@@ -20,7 +20,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {  
-                sh 'docker build -t inupavihan/blogfinity-frontend:%BUILD_NUMBER% .'
+                sh 'docker build -t inupavihan/blogfinity-frontend .'
             }
         }
     }
