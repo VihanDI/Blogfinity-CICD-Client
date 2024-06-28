@@ -13,7 +13,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function fetchBlogs(): Promise<BlogModel[]> {
-  const response = await fetchData("http://localhost:8081/api/blogs", {
+  const response = await fetchData("http://100.25.211.118:3000/api/blogs", {
     method: "GET",
   });
 
@@ -24,7 +24,7 @@ export async function fetchBlogsByUsername(
   loggedInUser: string
 ): Promise<BlogModel[]> {
   const response = await fetchData(
-    "http://localhost:8081/api/blogs/find/blogs",
+    "http://100.25.211.118:3000/api/blogs/find/blogs",
     {
       method: "POST",
       headers: {
@@ -45,7 +45,7 @@ export interface BlogInput {
 }
 
 export async function createBlog(blog: BlogInput): Promise<BlogModel> {
-  const response = await fetchData("http://localhost:8081/api/blogs", {
+  const response = await fetchData("http://100.25.211.118:3000/api/blogs", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export async function updateBlog(
   blog: BlogInput
 ): Promise<BlogModel> {
   const response = await fetchData(
-    "http://localhost:8081/api/blogs/" + blogId,
+    "http://100.25.211.118:3000/api/blogs/" + blogId,
     {
       method: "PATCH",
       headers: {
@@ -74,7 +74,7 @@ export async function updateBlog(
 }
 
 export async function deleteBlog(blogId: string) {
-  await fetchData("http://localhost:8081/api/blogs/" + blogId, {
+  await fetchData("http://100.25.211.118:3000/api/blogs/" + blogId, {
     method: "DELETE",
   });
 }

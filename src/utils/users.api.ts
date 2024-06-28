@@ -13,7 +13,7 @@ async function fetchData(input: RequestInfo, init?: RequestInit) {
 }
 
 export async function getLoggedInUser(): Promise<UserModel> {
-  const response = await fetchData("http://localhost:8081/api/users", {
+  const response = await fetchData("http://100.25.211.118:3000/api/users", {
     method: "GET",
     credentials: "include",
   });
@@ -30,14 +30,17 @@ export interface SignUpCredentials {
 export async function signUp(
   credentials: SignUpCredentials
 ): Promise<UserModel> {
-  const response = await fetchData("http://localhost:8081/api/users/signup", {
-    method: "POST",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  });
+  const response = await fetchData(
+    "http://100.25.211.118:3000/api/users/signup",
+    {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    }
+  );
 
   return response.json();
 }
@@ -48,20 +51,23 @@ export interface LoginCredentials {
 }
 
 export async function login(credentials: LoginCredentials): Promise<UserModel> {
-  const response = await fetchData("http://localhost:8081/api/users/login", {
-    method: "POST",
-    credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(credentials),
-  });
+  const response = await fetchData(
+    "http://100.25.211.118:3000/api/users/login",
+    {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(credentials),
+    }
+  );
 
   return response.json();
 }
 
 export async function logout() {
-  await fetchData("http://localhost:8081/api/users/logout", {
+  await fetchData("http://100.25.211.118:3000/api/users/logout", {
     method: "POST",
     credentials: "include",
   });

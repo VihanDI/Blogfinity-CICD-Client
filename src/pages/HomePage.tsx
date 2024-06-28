@@ -31,14 +31,14 @@ const HomePage = () => {
             cardContent="BLOGFINITY PROVIDES YOU THE STAGE TO REACH YOUR AUDIENCE. BUILD YOUR WORLD AROUND YOUR PASSION AND SHARE IT AMONG MILLIONS OF USERS. READ AND EXPLORE OTHER WORLDS OF INFINITE TOPICS. THE ULTIMATE PLATFORM IS ONLY A ONE CLICK AWAY."
             cardBtnText="SIGN UP"
             cardImgSrc="src\assets\images\homepagepic1.PNG"
-            cardLink="http://localhost:5173/signup"
+            cardLink="http://100.25.211.118:8081/signup"
           ></Card>
           <Card
             cardTitle="MORE TOOLS TO HELP YOUR BLOGGING JOURNEY"
             cardContent="BLOGFINITY PROVIDES YOU ALL THE TOOLS TO ASSIST YOU IN YOUR BLOGGING JOURNEY. CREATE YOUR BLOGS WITH OUR COMPREHENSIVE DRAFTING TOOLS AND ACCESS YOUR FAVORITE TOPICS EASILY. SO DON’T WAIT TO KICK START YOUR BLOGGING JOURNEY."
             cardBtnText="LOG IN"
             cardImgSrc="src\assets\images\homepagepic2.PNG"
-            cardLink="http://localhost:5173/login"
+            cardLink="http://100.25.211.118:8081/login"
           ></Card>
         </div>
       </div>
