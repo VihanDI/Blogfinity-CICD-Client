@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Docker Image') {
             steps {  
-                sh 'docker run -d -P --name blogfinity-frontend-container inupavihan/blogfinity-frontend'
+                sh 'docker run -d -p 8081:5173 --name blogfinity-frontend-container inupavihan/blogfinity-frontend'
             }
         }
     }
