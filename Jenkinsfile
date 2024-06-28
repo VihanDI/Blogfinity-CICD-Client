@@ -23,5 +23,11 @@ pipeline {
                 sh 'docker build -t inupavihan/blogfinity-frontend .'
             }
         }
+
+        stage('Run Docker Image') {
+            steps {  
+                sh 'docker run -d -P --name blogfinity-frontend-container inupavihan/blogfinity-frontend'
+            }
+        }
     }
 }
